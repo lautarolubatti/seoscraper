@@ -19,9 +19,10 @@
         "issues": "https://github.com/lautarolubatti/seoscraper/issues"
     },
     "require": {
-        "php": "~7.1",
+        "php": ">=7.1",
         "symfony/dom-crawler": "^4.2",
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "league/container": "^3.2"
     },
     "require-dev": {
         "phpunit/phpunit" : ">=7.0",
@@ -33,8 +34,9 @@
         "fix-style": "phpcbf src tests"
     },
     "autoload": {
-        "classmap": [
-            "src/"
-        ]
+        "psr-4": {
+            "SeoScraper\\": "src/"
+        },
+        "exclude-from-classmap": ["tests/"]
     }
 }
